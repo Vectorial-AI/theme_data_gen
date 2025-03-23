@@ -315,7 +315,7 @@ def generate_dialpad_files(file_types, themes, company_profile, count=None):
                 specific_content += profile_sections[section][:500]  # Truncate to keep prompt reasonable
                 specific_content += "\n"
         
-        # Create prompt for Claude for natural theme incorporation
+        # Create prompt for Claude with exact Dialpad JSON structure
         prompt = f"""
         Generate a realistic {doc_type} for SonderMind in JSON format.
         
@@ -325,7 +325,37 @@ def generate_dialpad_files(file_types, themes, company_profile, count=None):
         
         {specific_content}
         
-        This document should be formatted as a realistic Dialpad JSON export with appropriate fields and structure.
+        This document should be formatted as a realistic Dialpad JSON export with the following EXACT structure:
+        
+        {{
+          "call_id": "unique ID string",
+          "lines": [
+            {{
+              "contact_id": "contact ID string",
+              "content": "Message content",
+              "name": "Speaker name",
+              "time": "ISO timestamp format (YYYY-MM-DDThh:mm:ss.ssssss)",
+              "type": "transcript"
+            }},
+            {{
+              "content": "action_item or other moment type",
+              "name": "Speaker name",
+              "time": "ISO timestamp format (YYYY-MM-DDThh:mm:ss.ssssss)",
+              "type": "moment",
+              "user_id": "user ID string"
+            }}
+            // And so on with more lines...
+          ]
+        }}
+        
+        IMPORTANT REQUIREMENTS:
+        1. Each line in the "lines" array must be either:
+           - "type": "transcript" (for spoken dialog)
+           - "type": "moment" (for system events, action items, etc.)
+        2. "transcript" type lines should have: contact_id, content, name, time, type
+        3. "moment" type lines should have: content, name, time, type, user_id
+        4. "time" values should be valid ISO timestamps in YYYY-MM-DDThh:mm:ss.ssssss format
+        5. Caller/therapist exchanges should be realistic for a SonderMind conversation
         """
         
         if selected_themes:
@@ -352,14 +382,15 @@ def generate_dialpad_files(file_types, themes, company_profile, count=None):
                     prompt += "  Include competitor mentions where they would naturally occur in conversations or data.\n"
         
         prompt += """
-        Please make the content highly specific to SonderMind's business model, using realistic values, dates, and data structures.
-        Include appropriate JSON fields like timestamps, user IDs, call durations, sentiment scores, etc.
+        Please make the content highly specific to SonderMind's business model, using realistic dialog, dates, and context.
         
         IMPORTANT:
-        - The JSON data should be cohesive and realistic, not organized around themes
-        - Don't create explicit theme fields unless they would naturally exist in this type of data
-        - Themes should be reflected organically in the content of conversations, fields, and data
-        - The JSON structure should follow standard practices for this type of data
+        - FOLLOW THE EXACT JSON STRUCTURE DEFINED ABOVE
+        - The conversation should flow naturally between SonderMind representatives and therapists/clients
+        - Create a realistic mix of transcript and moment types throughout
+        - Ensure the themes are incorporated naturally in conversation content, not as artificial fields
+        - Do not add any additional fields to the JSON structure
+        - Make sure all JSON is properly formatted and valid
         
         IMPORTANT: Do not include any explanatory text like "Here's a realistic document" or "This JSON provides..." 
         Just give me the JSON content directly.

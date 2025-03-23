@@ -1,11 +1,14 @@
 {
   "sondermind_platforms": {
     "Coda": [
-      { "type": "Product Requirements Document - AI Coach", "format": ".md" },
-      { "type": "Feature Specification Sheet - Teletherapy", "format": ".md" },
-      { "type": "User Feedback & Insight Log", "format": ".md" },
-      { "type": "Therapist Credentialing Tracker", "format": ".md" },
-      { "type": "Client Intake & Matching Overview", "format": ".md" }
+      {
+        "type": "Annual Strategic Planning Workbook",
+        "format": ".md"
+      },
+      {
+        "type": "Clinical Outcomes & Research Report",
+        "format": ".md"
+      }
     ],
     "Dialpad": [
       { "type": "Therapist Outreach Call Logs", "format": ".json" },
