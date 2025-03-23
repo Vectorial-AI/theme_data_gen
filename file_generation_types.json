@@ -1,0 +1,25 @@
+{
+  "sondermind_platforms": {
+    "Coda": [
+      { "type": "Product Requirements Document - AI Coach", "format": ".md" },
+      { "type": "Feature Specification Sheet - Teletherapy", "format": ".md" },
+      { "type": "User Feedback & Insight Log", "format": ".md" },
+      { "type": "Therapist Credentialing Tracker", "format": ".md" },
+      { "type": "Client Intake & Matching Overview", "format": ".md" }
+    ],
+    "Dialpad": [
+      { "type": "Therapist Outreach Call Logs", "format": ".json" },
+      { "type": "Recruiting Objection Analysis", "format": ".json" },
+      { "type": "Support Interaction Records", "format": ".json" },
+      { "type": "Call Sentiment & Quality Reports", "format": ".json" },
+      { "type": "Outreach Funnel Performance", "format": ".json" }
+    ],
+    "Slack": [
+      { "type": "Therapist Onboarding Updates", "format": ".json" },
+      { "type": "Client Matching Alerts", "format": ".json" },
+      { "type": "Billing & Claim Notifications", "format": ".json" },
+      { "type": "Support & Incident Logs", "format": ".json" },
+      { "type": "Product Release Announcements", "format": ".txt" }
+    ]
+  }
+}

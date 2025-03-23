@@ -1,0 +1,22 @@
+Theme Category,Sub-theme
+Sales & Revenue,Extract Therapist Pain Points & Objections (Sales Calls)
+Operational Efficiency,Summarize Support Ticket Trends & Frequent Issues (Slack)
+Sales & Revenue,Identify Upsell & Renewal Opportunities (Salesforce CRM)
+Value Proposition & PMF,"Extract & Generate Customer Testimonials (Calls, Slack)"
+Growth Opportunities & Expansion,"Extract and Prioritize Feature Requests (Calls, Slack)"
+Sales & Revenue,Draft Follow-up Emails from Sales Call Notes (Sales Calls)
+Market & Competitive Insights,Generate Competitor Feature Comparison (Competitive Web)
+Product Design & Usability,"Summarize UX/UI Issues Reported by Therapists (Slack, Calls)"
+Operational Efficiency,Extract Platform Stability or Downtime Issues (Slack)
+Operational Efficiency,"Highlight Scheduling & Matching Efficiency Issues (Salesforce, Slack)"
+Value Proposition & PMF,"Summarize Competitive Advantages (Calls, Competitive Web)"
+Value Proposition & PMF,"Identify Gaps in Product Expectations vs. Reality (Calls, Slack)"
+Market & Competitive Insights,Extract Competitor Mentions and Feedback (Sales Calls)
+Growth Opportunities & Expansion,"Identify Potential Partnerships & Expansion Leads (Salesforce, Slack)"
+Market & Competitive Insights,Summarize Key Industry Trends & Movements (Competitive Web)
+Growth Opportunities & Expansion,"Summarize Emerging Customer Needs (Slack, Sales Calls)"
+User Behavior & Engagement,Identify Drop-off Points in Onboarding Flow (User Data)
+User Behavior & Engagement,Summarize Feature Adoption & Usage Patterns (User Data)
+Product Design & Usability,"Aggregate Recurring Usability Complaints (Slack, User Data)"
+User Behavior & Engagement,Highlight Therapist Segment Engagement Trends (User Data)
+Product Design & Usability,Identify Features with Low Discoverability (User Data)
